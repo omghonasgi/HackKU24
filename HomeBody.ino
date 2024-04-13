@@ -1,8 +1,7 @@
-
-
 // this constant won't change. It's the pin number of the sensor's output:
 const int trigPin = 4;
 const int echoPin = 2;
+const int ledPin = 9;
 
 void setup() {
   // initialize serial communication:
@@ -34,6 +33,13 @@ void loop() {
   // convert the time into a distance
   inches = microsecondsToInches(duration);
   cm = microsecondsToCentimeters(duration);
+
+  if (inches < 10 || cm < 25) {
+    digitalWrite(ledPin, HIGH);
+    Serial.print("ALERT - MOTION DETECTED")
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
 
   Serial.print(inches);
   Serial.print("in, ");

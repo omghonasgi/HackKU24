@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +9,33 @@
     <header>
         <h1>HomeBody</h1>
     </header>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store Range Variable</title>
-    <script>
-        var range = 10;
-        document.getElementById("currentRange").textContent = range;
-        function storeRange() {
-            var range = document.getElementById("range").value;
-            
-            localStorage.setItem("range", range);
-        }
-    </script>
 
     <p>
-        Current Range: <span id="currentRange"></span>
+        Current Range: <span id="currentRange">10</span> inches
     </p>
 
-    <form>
-        <label for="rangeselect"> Set Range (Inches):</label>
-        <input type="number" id="currentRange" name="range" ><br><br>
+    <form onsubmit="storeRange(); return false;">
+        <label for="range">Set Range (0-156 inches):</label>
+        <input type="range" id="range" name="range" min="0" max="156" value="10" oninput="updateRangeDisplay()"><br><br>
         <input type="submit" value="Submit">
-
     </form>
 
-    </html>
+    <script>
+        // Function to update the displayed range value
+        function updateRangeDisplay() {
+            var range = document.getElementById("range").value;
+            document.getElementById("currentRange").textContent = range;
+        }
 
+        // Function to store the selected range in localStorage
+        function storeRange() {
+            var range = document.getElementById("range").value;
+            localStorage.setItem("range", range);
+            alert("Range saved successfully!");
+        }
+
+        // Call updateRangeDisplay function when the page loads
+        window.onload = updateRangeDisplay;
+    </script>
+</body>
+</html>
