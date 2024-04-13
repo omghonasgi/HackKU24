@@ -13,9 +13,7 @@
     <title>Store Range Variable</title>
     <script>
         var range = 10;
-        if (range !== null) {
-            document.getElementById("currentRange").textContent = "Current Range: " + range;
-        }
+        document.getElementById("currentRange").textContent = range;
         function storeRange() {
             var range = document.getElementById("range").value;
             
@@ -23,12 +21,16 @@
         }
     </script>
 
-    
+    <p>
+        Current Range: <span id="currentRange"></span>
+    </p>
 
     <form>
         <label for="rangeselect"> Set Range (Inches):</label>
-        <input type="number" id="range" name="range" ><br><br>
+        <input type="number" id="currentRange" name="range" ><br><br>
         <input type="submit" value="Submit">
 
     </form>
+
+    </html>
 
