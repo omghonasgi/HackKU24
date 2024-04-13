@@ -4,21 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Device Selection</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        header {
+            background-color: rgb(90, 133, 196);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+        }
+        
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>HomeBody</h1>
     </header>
 
-    <p>
-        Current Range: <span id="currentRange">10</span> inches
-    </p>
+    <div class="container">
+        <p>
+            Current Range: <span id="currentRange">10</span> inches
+        </p>
 
-    <form onsubmit="storeRange(); return false;">
-        <label for="range">Set Range (0-156 inches):</label>
-        <input type="range" id="range" name="range" min="0" max="156" value="10" oninput="updateRangeDisplay()"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+        <form onsubmit="storeRange(); return false;">
+            <label for="range">Set Range (0-156 inches):</label>
+            <input type="range" id="range" name="range" min="0" max="156" value="10" oninput="updateRangeDisplay()"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 
     <script>
         // Function to update the displayed range value
@@ -31,7 +85,7 @@
         function storeRange() {
             var range = document.getElementById("range").value;
             localStorage.setItem("range", range);
-            alert("Range saved successfully");
+            alert("Range saved successfully!");
         }
 
         // Call updateRangeDisplay function when the page loads
@@ -45,3 +99,4 @@
     </script>
 </body>
 </html>
+

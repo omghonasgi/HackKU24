@@ -1,23 +1,74 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit Button Example</title>
+    <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ensure the container takes up the full height of the viewport */
+            margin: 0; /* Remove default margin */
+            background-color: rgb(90, 133, 196); /* Background color for the body */
+            font-family: Verdana, Geneva, sans-serif; /* Font family for the body */
+        }
+        .container {
+            background-color: #fff; /* Background color for the container */
+            border-radius: 10px; /* Rounded corners for the container */
+            padding: 20px; /* Padding for the container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect for the container */
+        }
+        h1 {
+            font-family: Verdana, Geneva, sans-serif; /* Font family for the header */
+            font-size: 24px; /* Font size for the header */
+            color: #333; /* Text color for the header */
+            margin-bottom: 20px; /* Bottom margin for the header */
+        }
+        label {
+            display: block; /* Display labels as block elements */
+            margin-bottom: 8px; /* Bottom margin for labels */
+            color: #666; /* Text color for labels */
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%; /* Full width for input fields */
+            padding: 10px; /* Padding for input fields */
+            margin-bottom: 20px; /* Bottom margin for input fields */
+            border: 1px solid #ccc; /* Border for input fields */
+            border-radius: 5px; /* Rounded corners for input fields */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        input[type="submit"] {
+            width: 100%; /* Full width for the submit button */
+            padding: 10px; /* Padding for the submit button */
+            background-color: #007bff; /* Background color for the submit button */
+            color: #fff; /* Text color for the submit button */
+            border: none; /* Remove border for the submit button */
+            border-radius: 5px; /* Rounded corners for the submit button */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: background-color 0.3s; /* Smooth transition for background color change */
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker background color on hover */
+        }
+    </style>
 </head>
-
 <body>
-    <h1>HomeBody</h1>
-    <form>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-    </form>
-    
-    <!-- Form with a submit button -->
-    <a href="signedin.html">
-        <input type="submit" value="Sign In">
-    </a>
+    <div class="container">
+        <h1>HomeBody</h1> <!-- Moved the header inside the container -->
+        <!-- Form for username and password -->
+        <form action="signedin.html">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <!-- Submit button -->
+            <input type="submit" value="Sign In">
+        </form>
+    </div>
 </body>
 </html>
