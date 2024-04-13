@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Selection</title>
+</head>
+<body>
+    <header>
+        <h1>HomeBody</h1>
+    </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Range Variable</title>
+    <script>
+        var range = 10;
+        if (range !== null) {
+            document.getElementById("currentRange").textContent = "Current Range: " + range;
+        }
+        function storeRange() {
+            var range = document.getElementById("range").value;
+            
+            localStorage.setItem("range", range);
+        }
+    </script>
+
+    
+
+    <form>
+        <label for="rangeselect"> Set Range (Inches):</label>
+        <input type="number" id="range" name="range" ><br><br>
+        <input type="submit" value="Submit">
+
+    </form>
+
