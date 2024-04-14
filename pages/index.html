@@ -69,7 +69,7 @@
             <!-- Submit button -->
             <input type="submit" value="Sign In"> <br><br>
         </form>
-        <form action="createaccount.html">
+        <form action="createAccount.html">
             <input type="submit" value = "Create Account">
         </form>
     </div>
@@ -85,7 +85,7 @@
             // Check if username exists in localStorage
             if (localStorage.getItem(username) === password) {
                 // If username and password match, redirect to home page
-                window.location.href = 'signedin.html';
+                window.location.href = 'signedIn.html';
             } else {
                 // If username and password don't match, display error message
                 document.getElementById('errorMessage').textContent = 'Incorrect username or password.';
