@@ -59,7 +59,7 @@
     <div class="container">
         <h1>HomeBody</h1> <!-- Moved the header inside the container -->
         <!-- Form for username and password -->
-        <form action="signedIn.html">
+        <form action="signedin.html">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             
@@ -67,8 +67,30 @@
             <input type="password" id="password" name="password" required>
             
             <!-- Submit button -->
-            <input type="submit" value="Sign In">
+            <input type="submit" value="Sign In"> <br><br>
+        </form>
+        <form action="createaccount.html">
+            <input type="submit" value = "Create Account">
         </form>
     </div>
+    <script>
+        // Function to handle form submission
+        document.getElementById('signInForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get username and password values
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Check if username exists in localStorage
+            if (localStorage.getItem(username) === password) {
+                // If username and password match, redirect to home page
+                window.location.href = 'signedin.html';
+            } else {
+                // If username and password don't match, display error message
+                document.getElementById('errorMessage').textContent = 'Incorrect username or password.';
+            }
+        });
+    </script>
 </body>
 </html>
