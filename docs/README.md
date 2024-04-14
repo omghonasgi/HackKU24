@@ -11,7 +11,7 @@ This project aims to create a versatile security motion detection system using A
 - Breadboard
 
 ## Software 
-- Programming Languages: C/C++, HTML/CSS
+- Programming Languages: C/C++, HTML/CSS, JavaScript
 - Tools/Technologies: Arduino IDE, LiquidCrystal Library, Servo Library, Tempertare Library
 
 ## How it Works
