@@ -38,9 +38,12 @@ void ultra(){
 
   distance = duration * .03 / 4;
   if (distance >= 422){
+    Serial.println("No object found");
     lcd.print("No object found");
   }
   else{
+    Serial.print(distance);
+    Serial.println(" Inches Away");
     lcd.print(distance);
     lcd.print(" Inches Away");    
   }
@@ -52,10 +55,12 @@ void fire(){
   if (dht.getData()) {
     float Farenheit = dht.getTemperature(true);
     if (Farenheit > 120){
+      Serial.println("There is a fire");
       lcd.setCursor(0, 1);
       lcd.print("There is a fire");
     } else{
       lcd.setCursor(0, 1);
+      Serial.println("No fire detected");
       lcd.print("No fire detected");
     }
   }
